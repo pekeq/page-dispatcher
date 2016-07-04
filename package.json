@@ -1,0 +1,29 @@
+{
+  "name": "@yuheiy/page-dispatcher",
+  "version": "0.0.0",
+  "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yhey.me/)",
+  "bugs": {
+    "url": "https://github.com/yuheiy/page-dispatcher/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "files": [
+    "src/",
+    "lib/"
+  ],
+  "homepage": "https://github.com/yuheiy/page-dispatcher",
+  "license": "MIT",
+  "main": "lib/page-dispatcher.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuheiy/page-dispatcher.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib --source-maps",
+    "prepublish": "npm run build",
+    "watch": "babel src --out-dir lib --watch --source-maps"
+  }
+}
