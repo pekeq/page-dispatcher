@@ -1,5 +1,5 @@
 'use strict';
-import Dispatcher from '../';
+import Dispatcher from '../src/page-dispatcher';
 
 const dispatcher = new Dispatcher();
 
