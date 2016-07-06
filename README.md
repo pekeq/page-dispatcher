@@ -2,6 +2,10 @@
 
 Divide methods by HTML files.
 
+## Concept
+
+[Details are here.](https://ryden-inc.github.io/rookies/posts/page-dispatcher.html)
+
 ## Installation
 
 ```bash
