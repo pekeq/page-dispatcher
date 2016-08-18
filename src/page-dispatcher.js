@@ -1,21 +1,21 @@
 'use strict';
 
-export default class PageDispatcher {
+class PageDispatcher {
   constructor() {
-    this._routes = [];
+    this._handlers = {};
   }
 
-  route(name, callback) {
-    this._routes.push({
-      name,
-      callback
-    });
-    return this;
+  on(type, handler) {
+    if (!this._handlers[type]) {
+      this._handlers[type] = [];
+    }
+    this._handlers[type].push(handler);
   }
 
-  run(name, ...params) {
-    this._routes
-      .filter((route) => name === route.name)
-      .forEach(({callback}) => callback(...params));
+  run(type, ...params) {
+    const handlers = this._handlers[type];
+    handlers.forEach(handler => handler(...params));
   }
 }
+
+module.exports = PageDispatcher;

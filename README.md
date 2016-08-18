@@ -20,11 +20,11 @@ $ npm install @yuheiy/simple-dispatcher
 var Dispatcher = require('@yuheiy/page-dispatcher');
 var dispatcher = new Dispatcher();
 
-dispatcher.route('common', function () {
+dispatcher.on('common', function () {
   // run on all pages
 });
 
-dispatcher.route('home', function (message) {
+dispatcher.on('home', function (message) {
   // run only on home
   console.log(message);
 });

@@ -3,19 +3,19 @@ import Dispatcher from '../src/page-dispatcher';
 
 const dispatcher = new Dispatcher();
 
-dispatcher.route('common', () => {
+dispatcher.on('common', () => {
   console.log('run on all pages');
 });
 
-dispatcher.route('index', () => {
+dispatcher.on('index', () => {
   console.log('only index');
 });
 
-dispatcher.route('about', () => {
+dispatcher.on('about', () => {
   console.log('only about');
 });
 
-dispatcher.route('user', (id, name) => {
+dispatcher.on('user', (id, name) => {
   console.log(`user: (${id})${name}`);
 });
 
