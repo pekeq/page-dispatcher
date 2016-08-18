@@ -1,7 +1,7 @@
 {
   "name": "@yuheiy/page-dispatcher",
   "description": "Divide methods by HTML files.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yhey.me/)",
   "bugs": {
     "url": "https://github.com/yuheiy/page-dispatcher/issues"
