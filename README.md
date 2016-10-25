@@ -9,7 +9,7 @@ Divide methods by HTML files.
 ## Installation
 
 ```bash
-$ npm install @yuheiy/simple-dispatcher
+$ npm install @yuheiy/page-dispatcher
 ```
 
 ## Usage
