@@ -1,7 +1,7 @@
 {
   "name": "@yuheiy/page-dispatcher",
   "description": "Divide logic of JavaScript by your page.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yuheiy.com/)",
   "bugs": {
     "url": "https://github.com/yuheiy/page-dispatcher/issues"
