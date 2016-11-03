@@ -1,15 +1,15 @@
 # Page Dispatcher
 
-Divide methods by HTML files.
+Divide logic of JavaScript by your page.
 
 ## Concept
 
-[Details are here.](https://ryden-inc.github.io/rookies/posts/page-dispatcher.html)
+[Details are here (Japanese)](https://ryden-inc.github.io/rookies/posts/page-dispatcher.html)
 
 ## Installation
 
 ```bash
-$ npm install @yuheiy/page-dispatcher
+$ npm install --save @yuheiy/page-dispatcher
 ```
 
 ## Usage
@@ -17,8 +17,8 @@ $ npm install @yuheiy/page-dispatcher
 ```javascript
 'use strict';
 
-var Dispatcher = require('@yuheiy/page-dispatcher');
-var dispatcher = new Dispatcher();
+var PageDispatcher = require('@yuheiy/page-dispatcher');
+var dispatcher = new PageDispatcher();
 
 dispatcher.on('common', function () {
   // run on all pages
@@ -43,7 +43,7 @@ window.run = dispatcher.run.bind(dispatcher);
   <body>
     <h1>Home</h1>
 
-    <script src="app.js"></script>
+    <script src="bundle.js"></script>
     <script>
       run('common');
       run('home', 'This is a home of this site.');

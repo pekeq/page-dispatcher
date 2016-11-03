@@ -1,14 +1,14 @@
 {
   "name": "@yuheiy/page-dispatcher",
-  "description": "Divide methods by HTML files.",
+  "description": "Divide logic of JavaScript by your page.",
   "version": "0.0.2",
-  "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yhey.me/)",
+  "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (https://yuheiy.com/)",
   "bugs": {
     "url": "https://github.com/yuheiy/page-dispatcher/issues"
   },
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0"
   },
   "files": [
     "src/",
@@ -16,14 +16,14 @@
   ],
   "homepage": "https://github.com/yuheiy/page-dispatcher",
   "license": "MIT",
-  "main": "lib/page-dispatcher.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yuheiy/page-dispatcher.git"
   },
   "scripts": {
-    "build": "babel src --out-dir lib --source-maps",
-    "watch": "babel src --out-dir lib --watch --source-maps",
-    "prepublish": "npm run build"
+    "build": "babel src/ --out-dir lib/ --source-maps",
+    "watch": "babel src/ --out-dir lib/ --watch --source-maps",
+    "prepublish": "rm -rf lib/ && npm run build"
   }
 }

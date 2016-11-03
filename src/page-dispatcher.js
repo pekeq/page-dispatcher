@@ -1,21 +1,30 @@
-'use strict';
-
-class PageDispatcher {
+export default class PageDispatcher {
   constructor() {
-    this._handlers = {};
+    this._handlers = {}
   }
 
   on(type, handler) {
-    if (!this._handlers[type]) {
-      this._handlers[type] = [];
+    if (typeof handler !== 'function') {
+      throw new TypeError('"handler" argument must be a function')
     }
-    this._handlers[type].push(handler);
+
+    if (typeof this._handlers[type] === 'undefined') {
+      this._handlers[type] = []
+    }
+    this._handlers[type].push(handler)
+
+    return this
   }
 
   run(type, ...params) {
-    const handlers = this._handlers[type];
-    handlers.forEach(handler => handler(...params));
+    const handlers = this._handlers[type]
+
+    if (typeof handlers === 'undefined') {
+      return false
+    }
+
+    handlers.forEach(handler => handler(...params))
+
+    return true
   }
 }
-
-module.exports = PageDispatcher;

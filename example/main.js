@@ -1,21 +1,22 @@
 'use strict';
-import Dispatcher from '../src/page-dispatcher';
 
-const dispatcher = new Dispatcher();
+var PageDispatcher = require('@yuheiy/page-dispatcher');
 
-dispatcher.on('common', () => {
+var dispatcher = new PageDispatcher();
+
+dispatcher.on('common', function () {
   console.log('run on all pages');
 });
 
-dispatcher.on('index', () => {
+dispatcher.on('index', function () {
   console.log('only index');
 });
 
-dispatcher.on('about', () => {
+dispatcher.on('about', function () {
   console.log('only about');
 });
 
-dispatcher.on('user', (id, name) => {
+dispatcher.on('user', function (id, name) {
   console.log(`user: (${id})${name}`);
 });
 
