@@ -1,6 +1,6 @@
 export default class PageDispatcher {
   constructor() {
-    this._handlers = {}
+    this._handlers = new Map()
   }
 
   on(type, handler) {
@@ -8,22 +8,23 @@ export default class PageDispatcher {
       throw new TypeError('"handler" argument must be a function')
     }
 
-    if (typeof this._handlers[type] === 'undefined') {
-      this._handlers[type] = []
-    }
-    this._handlers[type].push(handler)
+    const handlers = this._handlers.get(type) || new Set()
+    handlers.add(handler)
+    this._handlers.set(type, handlers)
 
     return this
   }
 
   run(type, ...params) {
-    const handlers = this._handlers[type]
+    const handlers = this._handlers.get(type)
 
     if (typeof handlers === 'undefined') {
       return false
     }
 
-    handlers.forEach(handler => handler(...params))
+    for (const handler of handlers) {
+      handler(...params)
+    }
 
     return true
   }
