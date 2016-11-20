@@ -20,11 +20,12 @@ $ npm install --save @yuheiy/page-dispatcher
 var PageDispatcher = require('@yuheiy/page-dispatcher');
 var dispatcher = new PageDispatcher();
 
-dispatcher.on('common', function () {
+dispatcher.on('common', function() {
   // run on all pages
+  console.log('common');
 });
 
-dispatcher.on('home', function (message) {
+dispatcher.on('home', function(message) {
   // run only on home
   console.log(message);
 });
@@ -48,6 +49,41 @@ window.run = dispatcher.run.bind(dispatcher);
       run('common');
       run('home', 'This is a home of this site.');
     </script>
+  </body>
+</html>
+```
+
+## Another way
+
+```javascript
+'use strict';
+
+var PageDispatcher = require('@yuheiy/page-dispatcher');
+var dispatcher = new PageDispatcher();
+
+// run on all pages
+console.log('common');
+
+dispatcher.on('home', function() {
+  // run only on home
+  console.log('home');
+});
+
+var currentPageType = document.body.dataset.pageType;
+dispatcher.run(currentPageType);
+```
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home - Site Name</title>
+    <script src="bundle.js" defer></script>
+  </head>
+
+  <body data-page-type="home">
+    <h1>Home</h1>
   </body>
 </html>
 ```
